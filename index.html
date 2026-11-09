@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            font-family: 'Trebuchet MS', sans-serif;
+            background-color: rgb(37, 52, 85);
+
+            height: 100vh;
+            
+        }
+        h1{
+            color:rgb(218, 230, 255);
+            text-align: center;
+        }
+  
+
+        .container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        background-color: dodgerblue;
+        padding: 10px;
+        }
+        .container div {
+        background-color: #f1f1f1;
+        border: 1px solid black;
+        padding: 10px;
+        font-size: 30px;
+        text-align: center;
+        }
+
+        #infoBox{
+            display:flex;
+            justify-content: center;
+           
+            border: 2px solid black;
+
+           
+            height: 100vh;
+        }
+        #header{
+            cursor: pointer;
+        }
+        .gif-overlay{
+            position:fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+
+            pointer-events: none;
+            display: none;
+
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <h1 style = "font-size: 4rem;"" id = "header">
+        Nico's Birtday!
+    </h1>
+
+    <img src = "" class = gif-overlay id = "confetti">
+
+    <div id = "container" class = "container">
+        <div id = "infoBox">
+            
+
+            <ul>
+                
+                <h2>Info:</h2>
+                <li>
+                    date:
+                </li>
+                <li>
+                    time:
+                </li>
+                <li>
+                    place
+                </li>
+            </ul>
+
+
+        </div>
+        <div>
+            hey
+        </div>
+
+    
+    </div>
+
+
+
+
+    <script>
+        const confetti = document.getElementById("confetti");
+        const header = document.getElementById("header");
+
+        let hideTimer;
+
+        header.addEventListener("click", function () {
+        clearTimeout(hideTimer);
+
+        confetti.src = "placidplace-congratulations-7600_512.gif?" + Date.now();
+        confetti.style.display = "block";
+
+        hideTimer = setTimeout(function () {
+            confetti.style.display = "none";
+            confetti.removeAttribute("src");
+        }, 2400);
+        });
+
+
+    </script>
+
+</body>
+</html>
